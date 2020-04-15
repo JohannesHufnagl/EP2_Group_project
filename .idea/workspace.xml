@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df32671a-21a7-4b4a-80ae-4d7c7f350452" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Body.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CelestialBody.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simulation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +57,17 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="771" y="78" key="#Project_Structure" timestamp="1585046775113">
       <screen x="0" y="0" width="2194" height="1194" />
@@ -72,11 +86,12 @@
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="659" y="0" key="SettingsEditor/0.0.2194.1194/3840.0.1680.1010@0.0.2194.1194" timestamp="1585055149040" />
-    <state x="866" y="292" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586977712165">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="1155" y="393" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586978922190">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="866" y="292" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586977712165" />
     <state x="990" y="335" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2194.1194/3840.0.1680.1010@0.0.2194.1194" timestamp="1585055107752" />
+    <state x="1155" y="393" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1586978922190" />
     <state x="835" y="191" key="run.anything.popup" timestamp="1585046839235">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
