@@ -6,6 +6,7 @@ public class Octant {
     public Octant(Vector3 position, double a) {
         this.position = position;
         this.a = a;
+        drawAsRect();
     }
 
     public Vector3 getPosition(){
@@ -28,5 +29,11 @@ public class Octant {
                 b.getPosition().getY() < this.position.getY() + a &&
                 b.getPosition().getZ() > this.position.getZ() - a &&
                 b.getPosition().getZ() < this.position.getZ() + a);
+    }
+
+    public void drawAsRect() {
+        StdDraw.setPenColor(StdDraw.WHITE);
+        StdDraw.setPenRadius(0.005);
+        StdDraw.square(this.position.getX(), this.position.getY(), a /2);
     }
 }
