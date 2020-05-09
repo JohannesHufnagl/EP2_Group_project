@@ -33,7 +33,7 @@ public class Octant {
 
     public void drawAsRect() {
         StdDraw.setPenColor(StdDraw.WHITE);
-        StdDraw.setPenRadius(0.05);
+        StdDraw.setPenRadius(0.005);
         StdDraw.square(this.position.getX(), this.position.getY(), a);
     }
 }

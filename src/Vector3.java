@@ -111,12 +111,18 @@ public class Vector3 {
     }
 
     public boolean contains(CelestialBody b) {
-        return (b.getPosition().getX() >= x - a &&
-                b.getPosition().getX() < x + a &&
-                b.getPosition().getY() >= y - a &&
-                b.getPosition().getY() < y + a &&
-                b.getPosition().getZ() >= z - a &&
-                b.getPosition().getZ() < z + a);
+        return (b.getPosition().getX() >= x - a/2 &&
+                b.getPosition().getX() < x + a/2 &&
+                b.getPosition().getY() >= y - a/2 &&
+                b.getPosition().getY() < y + a/2 &&
+                b.getPosition().getZ() >= z - a/2 &&
+                b.getPosition().getZ() < z + a/2);
+    }
+
+    public void drawAsRect() {
+        StdDraw.setPenColor(StdDraw.WHITE);
+        StdDraw.setPenRadius(0.002);
+        StdDraw.square(x, y, a/2);
     }
 
 }

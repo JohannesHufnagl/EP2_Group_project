@@ -3,8 +3,7 @@ public class Octree {
     private Vector3 boundary;
     private CelestialBody body;
     private boolean divided;
-    private Octree frontNortheast, frontNorthwest, frontSoutheast, frontSouthwest,
-            backNortheast, backNorthwest, backSoutheast, backSouthwest;
+    private Octree frontNortheast, frontNorthwest, frontSoutheast, frontSouthwest, backNortheast, backNorthwest, backSoutheast, backSouthwest;
     private int numberOfBodies;
 
     public Octree(Vector3 boundary) {
@@ -18,28 +17,28 @@ public class Octree {
         double z = boundary.getZ();
         double a = boundary.getA();
 
-        Vector3 fNe = new Vector3(x + a / 2, y + a / 2, z - a / 2, a / 2);
+        Vector3 fNe = new Vector3(x + a / 4, y + a / 4, z - a / 4, a / 2);
         frontNortheast = new Octree(fNe);
 
-        Vector3 fNw = new Vector3(x - a / 2, y + a / 2, z - a / 2, a / 2);
+        Vector3 fNw = new Vector3(x - a / 4, y + a / 4, z - a / 4, a / 2);
         frontNorthwest = new Octree(fNw);
 
-        Vector3 fSe = new Vector3(x + a / 2, y - a / 2, z - a / 2, a / 2);
+        Vector3 fSe = new Vector3(x + a / 4, y - a / 4, z - a / 4, a / 2);
         frontSoutheast = new Octree(fSe);
 
-        Vector3 fSw = new Vector3(x - a / 2, y - a / 2, z - a / 2, a / 2);
+        Vector3 fSw = new Vector3(x - a / 4, y - a / 4, z - a / 4, a / 2);
         frontSouthwest = new Octree(fSw);
 
-        Vector3 bNe = new Vector3(x + a / 2, y + a / 2, z + a / 2, a / 2);
+        Vector3 bNe = new Vector3(x + a / 4, y + a / 4, z + a / 4, a / 2);
         backNortheast = new Octree(bNe);
 
-        Vector3 bNw = new Vector3(x - a / 2, y + a / 2, z + a / 2, a / 2);
+        Vector3 bNw = new Vector3(x - a / 4, y + a / 4, z + a / 4, a / 2);
         backNorthwest = new Octree(bNw);
 
-        Vector3 bSe = new Vector3(x + a / 2, y - a / 2, z + a / 2, a / 2);
+        Vector3 bSe = new Vector3(x + a / 4, y - a / 4, z + a / 4, a / 2);
         backSoutheast = new Octree(bSe);
 
-        Vector3 bSw = new Vector3(x - a / 2, y - a / 2, z + a / 2, a / 2);
+        Vector3 bSw = new Vector3(x - a / 4, y - a / 4, z + a / 4, a / 2);
         backSouthwest = new Octree(bSw);
 
         divided = true;
@@ -52,6 +51,7 @@ public class Octree {
 
         if (body == null && !divided) {
             body = b;
+            boundary.drawAsRect();
             return true;
         } else {
             if (!divided) {
