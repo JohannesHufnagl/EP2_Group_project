@@ -86,5 +86,16 @@ public class Vector3 {
         System.out.print(toString());
     }
 
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public double getZ() {
+        return z;
+    }
 }
 

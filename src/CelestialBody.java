@@ -3,6 +3,8 @@ import java.awt.*;
 // This class represents celestial bodies like stars, planets, asteroids, etc..
 public class CelestialBody {
 
+    private static final double G = 6.6743e-11;
+
     private String name;
     private double mass;
     private double radius;
@@ -46,7 +48,7 @@ public class CelestialBody {
         Vector3 direction = body.position.minus(this.position);
         double r = direction.length();
         direction.normalize();
-        double force = Simulation.G * this.mass * body.mass / (r * r);
+        double force = G * this.mass * body.mass / (r * r);
         return direction.times(force);
     }
 
@@ -80,6 +82,10 @@ public class CelestialBody {
     public void draw() {
         this.position.drawAsDot(1e9 * Math.log10(this.radius), this.color);
         // use log10 because of large variation of radii.
+    }
+
+    public Vector3 getPosition(){
+        return position;
     }
 
 }

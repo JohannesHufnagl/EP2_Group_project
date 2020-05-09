@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b98fcf07-7271-42d7-b519-8771e4ea29cb" name="Default Changelist" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+    <list default="true" id="b98fcf07-7271-42d7-b519-8771e4ea29cb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Octant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Octree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Body.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CelestialBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CelestialBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Configuration.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/In.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReadDataUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vector3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vector3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,12 +50,26 @@
     <property name="project.structure.proportion" value="0.116027534" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
+  <component name="RunManager">
+    <configuration name="Simulation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Simulation" />
+      <module name="Teamaufgabe" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Simulation" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="df32671a-21a7-4b4a-80ae-4d7c7f350452" name="Default Changelist" comment="" />
+      <changelist id="b98fcf07-7271-42d7-b519-8771e4ea29cb" name="Default Changelist" comment="" />
       <created>1584719195180</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -54,6 +77,9 @@
       <workItem from="1586170943548" duration="860000" />
       <workItem from="1586174901789" duration="43000" />
       <workItem from="1586977699001" duration="1163000" />
+      <workItem from="1587038164499" duration="54000" />
+      <workItem from="1588944113995" duration="12769000" />
+      <workItem from="1588979108677" duration="4133000" />
     </task>
     <task id="LOCAL-00001" summary="Git Teamtest">
       <created>1586977829507</created>
@@ -62,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586977829507</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Den Code von Aufgabenblatt4 von Simulation.java eingefügt in die Teamaufgabe Simulation.java">
+      <created>1586979920031</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1586979920031</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,31 +116,80 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Git Teamtest" />
-    <option name="LAST_COMMIT_MESSAGE" value="Git Teamtest" />
+    <MESSAGE value="Den Code von Aufgabenblatt4 von Simulation.java eingefügt in die Teamaufgabe Simulation.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Den Code von Aufgabenblatt4 von Simulation.java eingefügt in die Teamaufgabe Simulation.java" />
   </component>
   <component name="WindowStateProjectService">
     <state x="771" y="78" key="#Project_Structure" timestamp="1585046775113">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="771" y="78" key="#Project_Structure/0.0.2194.1194/3840.0.1680.1010@0.0.2194.1194" timestamp="1585046775113" />
+    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1588981129567">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588981129567" />
     <state x="901" y="268" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1586977787415">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="901" y="268" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586977787415" />
     <state x="1030" y="308" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.2194.1194/3840.0.1680.1010@0.0.2194.1194" timestamp="1585055012472" />
-    <state x="742" y="13" key="CommitChangelistDialog2" timestamp="1586977825371">
+    <state x="714" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1588950819538">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="742" y="13" key="CommitChangelistDialog2/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586977825371" />
+    <state x="714" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588950819538" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588950776128">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588950776128" />
+    <state x="742" y="13" key="CommitChangelistDialog2" timestamp="1586979915770">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="742" y="13" key="CommitChangelistDialog2/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586979915770" />
     <state x="848" y="15" key="CommitChangelistDialog2/0.0.2194.1194/3840.0.1680.1010@0.0.2194.1194" timestamp="1585055132610" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1587038215697">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587038215697" />
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1588983332780">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588983332780" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1588983332779">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588983332779" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1588983332779">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588983332779" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1588983332780">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588983332780" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1588983338682">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588983338682" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1588983338681">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588983338681" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1588983338680">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588983338680" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1588983338681">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588983338681" />
     <state x="659" y="0" key="SettingsEditor" timestamp="1585055149040">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="659" y="0" key="SettingsEditor/0.0.2194.1194/3840.0.1680.1010@0.0.2194.1194" timestamp="1585055149040" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1586979530168">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1586979924565">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586979530168" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586979924565" />
     <state x="485" y="254" key="VcsDiffUtil.ChangesDialog" timestamp="1586979372354">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -121,5 +203,16 @@
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="835" y="191" key="run.anything.popup/0.0.2194.1194/3840.0.1680.1010@0.0.2194.1194" timestamp="1585046839235" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Simulation.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
