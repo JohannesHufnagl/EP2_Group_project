@@ -97,5 +97,7 @@ public class Vector3 {
     public double getZ() {
         return z;
     }
+
+
 }
 

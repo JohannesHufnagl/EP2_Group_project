@@ -10,7 +10,6 @@ public class Simulation {
     // The main simulation method using instances of other classes.
     public static void main(String[] args) {
 
-
         Octant boundary = new Octant(200, 200, 200, 200);
         Octree ot = new Octree(boundary);
 

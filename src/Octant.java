@@ -1,36 +1,15 @@
 public class Octant {
 
-    private double x, y, z, a;
+    private double a;
+    private Vector3 position;
 
-    public Octant(double x, double y, double z, double a) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
+    public Octant(Vector3 position, double a) {
+        this.position = position;
         this.a = a;
     }
 
-    public double getX() {
-        return x;
-    }
-
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    public double getY() {
-        return y;
-    }
-
-    public void setY(double y) {
-        this.y = y;
-    }
-
-    public double getZ() {
-        return z;
-    }
-
-    public void setZ(double z) {
-        this.z = z;
+    public Vector3 getPosition(){
+        return position;
     }
 
     public double getA() {
@@ -42,12 +21,12 @@ public class Octant {
     }
 
     public boolean contains(CelestialBody b){
-        return (b.getPosition().getX() > x - a &&
-                b.getPosition().getX() < x + a &&
-                b.getPosition().getY() > y - a &&
-                b.getPosition().getY() < y + a &&
-                b.getPosition().getZ() > z - a &&
-                b.getPosition().getZ() < z + a);
 
+        return (b.getPosition().getX() > this.position.getX() - a &&
+                b.getPosition().getX() < this.position.getX() + a &&
+                b.getPosition().getY() > this.position.getY() - a &&
+                b.getPosition().getY() < this.position.getY() + a &&
+                b.getPosition().getZ() > this.position.getZ() - a &&
+                b.getPosition().getZ() < this.position.getZ() + a);
     }
 }

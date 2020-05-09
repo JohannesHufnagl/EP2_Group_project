@@ -1,13 +1,12 @@
-import java.util.ArrayList;
-
 public class Octree {
 
     private Octant boundary;
-    private ArrayList<CelestialBody> bodies = new ArrayList<>();
+    private CelestialBody bodie;
     private boolean divided;
     private Octree frontNortheast, frontNorthwest, frontSoutheast, frontSouthwest,
             backNortheast, backNorthwest, backSoutheast, backSouthwest;
     private int numberOfBodies;
+
 
     public Octree(Octant boundary) {
         this.boundary = boundary;
@@ -15,26 +14,26 @@ public class Octree {
     }
 
     public void subdivide() {
-        double x = boundary.getX();
-        double y = boundary.getY();
-        double z = boundary.getZ();
+        double x = boundary.getPosition().getX();
+        double y = boundary.getPosition().getY();
+        double z = boundary.getPosition().getZ();
         double a = boundary.getA();
 
-        Octant fNe = new Octant(x + a / 2, y - a / 2, z - a / 2, a / 2);
+        Octant fNe = new Octant(new Vector3(x + a / 2, y - a / 2, z - a / 2), a / 2);
         frontNortheast = new Octree(fNe);
-        Octant fNw = new Octant(x - a / 2, y - a / 2, z - a / 2, a / 2);
+        Octant fNw = new Octant(new Vector3(x - a / 2, y - a / 2, z - a / 2), a / 2);
         frontNorthwest = new Octree(fNw);
-        Octant fSe = new Octant(x + a / 2, y + a / 2, z - a / 2, a / 2);
+        Octant fSe = new Octant(new Vector3(x + a / 2, y + a / 2, z - a / 2), a / 2);
         frontSoutheast = new Octree(fSe);
-        Octant fSw = new Octant(x - a / 2, y + a / 2, z - a / 2, a / 2);
+        Octant fSw = new Octant(new Vector3(x - a / 2, y + a / 2, z - a / 2), a / 2);
         frontSouthwest = new Octree(fSw);
-        Octant bNe = new Octant(x + a / 2, y - a / 2, z + a / 2, a / 2);
+        Octant bNe = new Octant(new Vector3(x + a / 2, y - a / 2, z + a / 2), a / 2);
         backNortheast = new Octree(bNe);
-        Octant bNw = new Octant(x - a / 2, y - a / 2, z + a / 2, a / 2);
+        Octant bNw = new Octant(new Vector3(x - a / 2, y - a / 2, z + a / 2), a / 2);
         backNorthwest = new Octree(bNw);
-        Octant bSe = new Octant(x + a / 2, y + a / 2, z + a / 2, a / 2);
+        Octant bSe = new Octant(new Vector3(x + a / 2, y + a / 2, z + a / 2), a / 2);
         backSoutheast = new Octree(bSe);
-        Octant bSw = new Octant(x - a / 2, y + a / 2, z + a / 2, a / 2);
+        Octant bSw = new Octant(new Vector3(x - a / 2, y + a / 2, z + a / 2), a / 2);
         backSouthwest = new Octree(bSw);
 
         divided = true;
@@ -45,13 +44,13 @@ public class Octree {
             return false;
         }
 
-        if (bodies.size() == 0 && !divided) {
-            bodies.add(b);
+        if (bodie == null && !divided) {
+            bodie = b;
             return true;
         } else {
             if (!divided) {
-                CelestialBody containedBody = bodies.get(0);
-                bodies.clear();
+                CelestialBody containedBody = bodie;
+                bodie = null;
                 subdivide();
                 frontNortheast.insert(containedBody);
                 frontNorthwest.insert(containedBody);
@@ -70,7 +69,6 @@ public class Octree {
                     backNorthwest.insert(b) ||
                     backSoutheast.insert(b) ||
                     backSouthwest.insert(b));
-
         }
     }
 }
