@@ -6,6 +6,7 @@ public class Vector3 {
     private double x;
     private double y;
     private double z;
+    private double a;
 
     public Vector3() {
     }
@@ -14,6 +15,13 @@ public class Vector3 {
         this.x = x;
         this.y = y;
         this.z = z;
+    }
+
+    public Vector3(double x, double y, double z, double a) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.a = a;
     }
 
     // Returns the sum of this vector and vector 'v'.
@@ -98,6 +106,17 @@ public class Vector3 {
         return z;
     }
 
+    public double getA() {
+        return a;
+    }
+
+    public boolean contains(CelestialBody b) {
+        return (b.getPosition().getX() >= x - a &&
+                b.getPosition().getX() < x + a &&
+                b.getPosition().getY() >= y - a &&
+                b.getPosition().getY() < y + a &&
+                b.getPosition().getZ() >= z - a &&
+                b.getPosition().getZ() < z + a);
+    }
 
 }
-

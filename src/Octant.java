@@ -1,5 +1,5 @@
 public class Octant {
-    private static final double AU = 150e9;
+
     private double a;
     private Vector3 position;
 
@@ -9,7 +9,7 @@ public class Octant {
         drawAsRect();
     }
 
-    public Vector3 getPosition() {
+    public Vector3 getPosition(){
         return position;
     }
 
@@ -21,7 +21,7 @@ public class Octant {
         this.a = a;
     }
 
-    public boolean contains(CelestialBody b) {
+    public boolean contains(CelestialBody b){
 
         return (b.getPosition().getX() > this.position.getX() - a &&
                 b.getPosition().getX() < this.position.getX() + a &&
@@ -33,6 +33,7 @@ public class Octant {
 
     public void drawAsRect() {
         StdDraw.setPenColor(StdDraw.WHITE);
-        StdDraw.square(this.position.getX(), this.position.getY(), a / 2);
+        StdDraw.setPenRadius(0.05);
+        StdDraw.square(this.position.getX(), this.position.getY(), a);
     }
 }
