@@ -5,8 +5,9 @@ public class Octree {
     private Octant boundary;
     private ArrayList<CelestialBody> bodies = new ArrayList<>();
     private boolean divided;
-    Octree frontNortheast, frontNorthwest, frontSoutheast, frontSouthwest,
+    private Octree frontNortheast, frontNorthwest, frontSoutheast, frontSouthwest,
             backNortheast, backNorthwest, backSoutheast, backSouthwest;
+    private int numberOfBodies;
 
     public Octree(Octant boundary) {
         this.boundary = boundary;
@@ -39,25 +40,37 @@ public class Octree {
         divided = true;
     }
 
-    public void insert(CelestialBody b) {
+    public boolean insert(CelestialBody b) {
         if (!boundary.contains(b)) {
-            return;
+            return false;
         }
 
-        if (bodies.size() == 0) {
+        if (bodies.size() == 0 && !divided) {
             bodies.add(b);
+            return true;
         } else {
             if (!divided) {
+                CelestialBody containedBody = bodies.get(0);
+                bodies.clear();
                 subdivide();
+                frontNortheast.insert(containedBody);
+                frontNorthwest.insert(containedBody);
+                frontSoutheast.insert(containedBody);
+                frontSouthwest.insert(containedBody);
+                backNortheast.insert(containedBody);
+                backNorthwest.insert(containedBody);
+                backSoutheast.insert(containedBody);
+                backSouthwest.insert(containedBody);
             }
-            frontNortheast.insert(b);
-            frontNorthwest.insert(b);
-            frontSoutheast.insert(b);
-            frontSouthwest.insert(b);
-            backNortheast.insert(b);
-            backNorthwest.insert(b);
-            backSoutheast.insert(b);
-            backSouthwest.insert(b);
+            return (frontNortheast.insert(b) ||
+                    frontNorthwest.insert(b) ||
+                    frontSoutheast.insert(b) ||
+                    frontSouthwest.insert(b) ||
+                    backNortheast.insert(b) ||
+                    backNorthwest.insert(b) ||
+                    backSoutheast.insert(b) ||
+                    backSouthwest.insert(b));
+
         }
     }
 }
