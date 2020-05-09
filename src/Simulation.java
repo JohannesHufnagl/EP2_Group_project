@@ -10,6 +10,11 @@ public class Simulation {
 
     // The main simulation method using instances of other classes.
     public static void main(String[] args) {
+        StdDraw.setCanvasSize(500, 500);
+        StdDraw.setXscale(0, 4 * AU);
+        StdDraw.setYscale(0, 4 * AU);
+        double pixelWidth = 4 * AU / 400;
+        StdDraw.clear(StdDraw.BLACK);
 
         Octant boundary = new Octant(new Vector3(4 * AU, 4 * AU, 4 * AU), 4 * AU);
         Octree ot = new Octree(boundary);
@@ -25,19 +30,13 @@ public class Simulation {
         }
         System.out.println("Finished!");
 
-        StdDraw.setCanvasSize(500, 500);
-        StdDraw.setXscale(0, 4 * AU);
-        StdDraw.setYscale(0, 4 * AU);
-        double pixelWidth = 4 * AU / 400;
-        StdDraw.enableDoubleBuffering();
-        StdDraw.clear(StdDraw.BLACK);
+
 
         for (int i = 0; i < bodies.size(); i++) {
             bodies.get(i).draw();
         }
 
         // show new positions
-        StdDraw.show();
 
     }
 }
