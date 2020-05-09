@@ -4,7 +4,8 @@ public class Octree {
     private CelestialBody body;
     private boolean divided;
     private Octree frontNortheast, frontNorthwest, frontSoutheast, frontSouthwest, backNortheast, backNorthwest, backSoutheast, backSouthwest;
-    private int numberOfBodies;
+    private double mass;
+    private Vector3 centerOfGravity;
 
     public Octree(Vector3 boundary) {
         this.boundary = boundary;
@@ -48,10 +49,10 @@ public class Octree {
         if (!boundary.contains(b)) {
             return false;
         }
-
+        mass += b.getMass();
+        boundary.drawAsRect();
         if (body == null && !divided) {
             body = b;
-            boundary.drawAsRect();
             return true;
         } else {
             if (!divided) {
@@ -78,5 +79,8 @@ public class Octree {
         }
     }
 
+    public double getMass(){
+        return mass;
+    }
 
 }

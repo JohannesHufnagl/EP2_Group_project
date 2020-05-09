@@ -23,7 +23,7 @@ public class Simulation {
 
         ArrayList<CelestialBody> bodies = new ArrayList<>();
 
-        for (int i = 0; i < 200; i++) {
+        for (int i = 0; i < 10; i++) {
             CelestialBody test = new CelestialBody("test" + i, Math.random() * 1e25, Math.random() * 1e3,
                     new Vector3((Math.random() * 4 * AU),
                             (Math.random() * 4 * AU),
@@ -36,10 +36,11 @@ public class Simulation {
             System.out.println(ot.insert(test));
         }
 
+        System.out.println(ot.getMass());
+
         for( CelestialBody body :bodies){
             body.draw();
         }
-
         StdDraw.show();
         System.out.println("Finished!");
     }

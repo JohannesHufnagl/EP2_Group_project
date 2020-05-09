@@ -8,8 +8,7 @@ public class Vector3 {
     private double z;
     private double a;
 
-    public Vector3() {
-    }
+    public Vector3(){}
 
     public Vector3(double x, double y, double z) {
         this.x = x;

@@ -12,9 +12,6 @@ public class CelestialBody {
     private Vector3 currentMovement;
     private Color color; // for drawing the body.
 
-    public CelestialBody() {
-    }
-
     public CelestialBody(String name, double mass, double radius, Vector3 position, Vector3 currentMovement, Color color) {
         this.name = name;
         this.mass = mass;
@@ -22,15 +19,6 @@ public class CelestialBody {
         this.position = position;
         this.currentMovement = currentMovement;
         this.color = color;
-    }
-
-    public CelestialBody(CelestialBody body, Vector3 position, Vector3 velocity) {
-        this.name = body.name;
-        this.mass = body.mass;
-        this.radius = body.radius;
-        this.position = position;
-        this.currentMovement = velocity;
-        this.color = body.color;
     }
 
     // Returns the name of this celestial body.
@@ -88,4 +76,7 @@ public class CelestialBody {
         return position;
     }
 
+    public double getMass(){
+        return mass;
+    }
 }
