@@ -80,7 +80,7 @@ public class CelestialBody {
     // The radius of the dot is in relation to the radius of the celestial body
     // (use a conversion based on the logarithm as in 'Simulation.java').
     public void draw() {
-        this.position.drawAsDot(1e9 * Math.log10(this.radius), this.color);
+        this.position.drawAsDot(1e9 * Math.log10(this.radius) <= 0 ? 1e9 * Math.log10(this.radius) *(-1) : 1e9 * Math.log10(this.radius) , this.color);
         // use log10 because of large variation of radii.
     }
 

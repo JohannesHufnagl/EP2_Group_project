@@ -11,6 +11,14 @@ public class Simulation {
     // The main simulation method using instances of other classes.
     public static void main(String[] args) {
 
+        StdDraw.setCanvasSize(500, 500);
+        StdDraw.setXscale(-2 * AU, 2 * AU);
+        StdDraw.setYscale(-2 * AU, 2 * AU);
+        double pixelWidth = 4 * AU / 500;
+        StdDraw.enableDoubleBuffering();
+        StdDraw.clear(StdDraw.BLACK);
+
+
         Vector3 boundary = new Vector3(4 * AU, 4 * AU, 4 * AU, 4 * AU);
         Octree ot = new Octree(boundary);
 
@@ -26,12 +34,6 @@ public class Simulation {
         }
         System.out.println("Finished!");
 
-        StdDraw.setCanvasSize(500, 500);
-        StdDraw.setXscale(-2 * AU, 2 * AU);
-        StdDraw.setYscale(-2 * AU, 2 * AU);
-        double pixelWidth = 4 * AU / 500;
-        StdDraw.enableDoubleBuffering();
-        StdDraw.clear(StdDraw.BLACK);
 
         for (CelestialBody body : bodies) {
             body.draw();

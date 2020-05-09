@@ -3,7 +3,8 @@ public class Octree {
     private Vector3 boundary;
     private CelestialBody body;
     private boolean divided;
-    private Octree frontNortheast, frontNorthwest, frontSoutheast, frontSouthwest, backNortheast, backNorthwest, backSoutheast, backSouthwest;
+    private Octree frontNortheast, frontNorthwest, frontSoutheast, frontSouthwest,
+            backNortheast, backNorthwest, backSoutheast, backSouthwest;
     private int numberOfBodies;
 
     public Octree(Vector3 boundary) {
