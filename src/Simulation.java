@@ -1,47 +1,55 @@
-import java.awt.*;
-import java.util.ArrayList;
+import java.awt.Color;
 
 public class Simulation {
 
     // one astronomical unit (AU) is the average distance of earth to the sun.
-    private static final double AU = 150e9;
+    private static final double AU = 149.5979e9;
 
-    // all quantities are based on units of kilogram respectively second and meter.
-
-    // The main simulation method using instances of other classes.
     public static void main(String[] args) {
 
         StdDraw.setCanvasSize(500, 500);
-        StdDraw.setXscale(0, 4 * AU);
-        StdDraw.setYscale(0, 4 * AU);
+        StdDraw.setXscale(-2 * AU, 2 * AU);
+        StdDraw.setYscale(-2 * AU, 2 * AU);
         StdDraw.enableDoubleBuffering();
-        StdDraw.clear(StdDraw.BLACK);
 
 
-        Vector3 boundary = new Vector3(2 * AU, 2 * AU, 2 * AU, 4 * AU);
-        Octree ot = new Octree(boundary);
-
-        ArrayList<CelestialBody> bodies = new ArrayList<>();
-
-        for (int i = 0; i < 10; i++) {
-            CelestialBody test = new CelestialBody("test" + i, Math.random() * 1e25, Math.random() * 1e3,
-                    new Vector3((Math.random() * 4 * AU),
-                            (Math.random() * 4 * AU),
-                            (Math.random() * 4 * AU)),
-                    new Vector3(0, 0, 0),
-                    new Color((int) (Math.random() * 256 - 100) + 100,
-                            (int) (Math.random() * 256 - 100) + 100,
-                            (int) (Math.random() * 256 - 100) + 100));
-            bodies.add(test);
-            System.out.println(ot.insert(test));
+        Body[] bodies = new Body[1000];
+        for (int i = 0; i < 1000; i++) {
+            bodies[i] = new Body(Math.random() * 1e25,
+                    new Vector3(((Math.random() * (2 * AU - (-2) * AU)) + (-2) * AU), ((Math.random() * (2 * AU - (-2) * AU)) + (-2) * AU), ((Math.random() * (2 * AU - (-2) * AU)) + (-2) * AU)),
+                    new Vector3(((Math.random() * (1e10 - (-1e10))) + (-1e10)), ((Math.random() * (1e10 - (-1e10))) + (-1e10)), 0),
+                    new Color((int) (Math.random() * 256), (int) (Math.random() * 256), (int) (Math.random() * 256)));
         }
 
-        System.out.println(ot.getMass());
+        // simulate the universe
+        while (true) {
 
-        for( CelestialBody body :bodies){
-            body.draw();
+            Cube cube = new Cube(0, 0, 0, 4 * AU);
+            BHTree tree = new BHTree(cube);
+
+            // build the Barnes-Hut tree
+            for (int i = 0; i < 1000; i++) {
+                if (bodies[i].in(cube)) {
+                    tree.insert(bodies[i]);
+                }
+            }
+
+            // update the forces, positions, velocities, and accelerations
+            for (int i = 0; i < 1000; i++) {
+                bodies[i].resetForce();
+                tree.updateForce(bodies[i]);
+                bodies[i].update();
+            }
+
+            // draw the bodies
+            StdDraw.clear(StdDraw.BLACK);
+            for (int i = 0; i < 1000; i++) {
+                bodies[i].draw();
+            }
+
+            StdDraw.show();
+            StdDraw.pause(10);
         }
-        StdDraw.show();
-        System.out.println("Finished!");
     }
+
 }
