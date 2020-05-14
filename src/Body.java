@@ -5,11 +5,11 @@ public class Body {
     // gravitational constant
     private static final double G = 6.6743e-11;
 
-    private double mass;            // mass
-    private Vector3 position;       // position
-    private Vector3 velocity;       // velocity
-    private Vector3 force;          // force
-    private Color color;            // color
+    private double mass;
+    private Vector3 position;
+    private Vector3 velocity;
+    private Vector3 force;
+    private Color color;
 
     public Body(double mass, Vector3 position, Vector3 velocity, Color color) {
         this.mass = mass;
@@ -18,10 +18,9 @@ public class Body {
         this.color = color;
     }
 
-    public void update() {
+    public void move() {
         position = position.plus(velocity).plus(force.dividedBy(mass));
         velocity = velocity.plus(force.dividedBy(mass));
-
     }
 
     public double distanceTo(Body b) {
@@ -50,13 +49,13 @@ public class Body {
         return mass + " kg, position: " + position.toString() + " m, " + "movement: " + velocity.toString() + " m/s.";
     }
 
-    public boolean in(Cube c) {
+    public boolean isIn(Cube c) {
         return position.in(c);
     }
 
-    public Body plus(Body b) {
+    public Body unite(Body b) {
         double m = mass + b.mass;
         Vector3 p = (position.times(mass).plus(b.position.times(b.mass))).dividedBy(m);
-        return new Body(m, p, velocity, color);
+        return new Body(m, p, velocity.plus(b.velocity), color);
     }
 }

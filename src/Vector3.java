@@ -1,4 +1,3 @@
-import java.awt.*;
 
 // This class represents vectors in a 3D vector space.
 public class Vector3 {

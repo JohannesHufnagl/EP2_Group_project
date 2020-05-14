@@ -99,18 +99,4 @@ public class Cube {
         StdDraw.square(x, y, length / 2.0);
     }
 
-    public String toString() {
-        String ret = "\n";
-        for (int row = 0; row < this.length; row++) {
-            for (int col = 0; col < this.length; col++) {
-                if (row == 0 || col == 0 || row == this.length - 1 || col == this.length - 1)
-                    ret += "*";
-                else
-                    ret += " ";
-            }
-            ret += "\n";
-        }
-        return ret;
-    }
-
 }

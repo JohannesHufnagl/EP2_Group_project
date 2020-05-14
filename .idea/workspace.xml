@@ -21,8 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b98fcf07-7271-42d7-b519-8771e4ea29cb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BHTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BHTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Body.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cube.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vector3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vector3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,12 +169,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Git Teamtest" />
@@ -184,7 +188,8 @@
     <MESSAGE value="Deleted Octant class" />
     <MESSAGE value="Changed the Octree.java class to Cube.java class and implemented the algorithm in the BHTree.java class.&#10;Several changes are copied from local project to keep the team repository clean." />
     <MESSAGE value="Changed the Octree.java class to Cube.java class and implemented the algorithm in the BHTree.java class.&#10;Rewritten the Body.java class.&#10;Several changes are copied from local project to keep the team repository clean." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed the Octree.java class to Cube.java class and implemented the algorithm in the BHTree.java class.&#10;Rewritten the Body.java class.&#10;Several changes are copied from local project to keep the team repository clean." />
+    <MESSAGE value="optimized simulation, by trying different values for: theta, body masses and body velocities.&#10;Placed a heavy body in the center, to visualize how the the algorithm forces the bodies to the center, depending on their velocity." />
+    <option name="LAST_COMMIT_MESSAGE" value="optimized simulation, by trying different values for: theta, body masses and body velocities.&#10;Placed a heavy body in the center, to visualize how the the algorithm forces the bodies to the center, depending on their velocity." />
   </component>
   <component name="WindowStateProjectService">
     <state x="771" y="78" key="#Project_Structure" timestamp="1585046775113">
@@ -208,10 +213,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588950776128" />
-    <state x="613" y="170" key="CommitChangelistDialog2" timestamp="1589269600422">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="574" y="138" key="CommitChangelistDialog2" timestamp="1589476468672">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="460" y="126" key="CommitChangelistDialog2/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589041131946" />
+    <state x="574" y="138" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1589476468672" />
     <state x="848" y="15" key="CommitChangelistDialog2/0.0.2194.1194/3840.0.1680.1010@0.0.2194.1194" timestamp="1585055132610" />
     <state x="613" y="170" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1589269600422" />
     <state x="987" y="370" key="FileChooserDialogImpl" timestamp="1589358488794">
@@ -219,29 +225,33 @@
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589042747505" />
     <state x="987" y="370" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1589358488794" />
-    <state width="2517" height="520" key="GridCell.Tab.0.bottom" timestamp="1589278018345">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1877" height="234" key="GridCell.Tab.0.bottom" timestamp="1589476185970">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="234" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589044361916" />
     <state width="1323" height="237" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1589143551808" />
+    <state width="1877" height="234" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589476185970" />
     <state width="2517" height="520" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1589278018345" />
-    <state width="2517" height="520" key="GridCell.Tab.0.center" timestamp="1589278018345">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1877" height="234" key="GridCell.Tab.0.center" timestamp="1589476185970">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="234" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589044361912" />
     <state width="1323" height="237" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1589143551808" />
+    <state width="1877" height="234" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589476185970" />
     <state width="2517" height="520" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1589278018345" />
-    <state width="2517" height="520" key="GridCell.Tab.0.left" timestamp="1589278018345">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1877" height="234" key="GridCell.Tab.0.left" timestamp="1589476185969">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="234" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589044361911" />
     <state width="1323" height="237" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1589143551808" />
+    <state width="1877" height="234" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589476185969" />
     <state width="2517" height="520" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1589278018345" />
-    <state width="2517" height="520" key="GridCell.Tab.0.right" timestamp="1589278018345">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1877" height="234" key="GridCell.Tab.0.right" timestamp="1589476185970">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="234" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589044361913" />
     <state width="1323" height="237" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1589143551808" />
+    <state width="1877" height="234" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589476185970" />
     <state width="2517" height="520" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1589278018345" />
     <state width="1338" height="348" key="GridCell.Tab.1.bottom" timestamp="1589040000678">
       <screen x="0" y="0" width="1920" height="1040" />
