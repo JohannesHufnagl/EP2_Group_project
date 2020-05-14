@@ -17,7 +17,7 @@ public class Simulation {
         for (int i = 0; i < 1000; i++) {
             bodies[i] = new Body(Math.random() * 1e25,
                     new Vector3(((Math.random() * (2 * AU - (-2) * AU)) + (-2) * AU), ((Math.random() * (2 * AU - (-2) * AU)) + (-2) * AU), ((Math.random() * (2 * AU - (-2) * AU)) + (-2) * AU)),
-                    new Vector3(((Math.random() * (1e10 - (-1e10))) + (-1e10)), ((Math.random() * (1e10 - (-1e10))) + (-1e10)), 0),
+                    new Vector3(((Math.random() * (1e8 - (-1e8))) + (-1e8)), ((Math.random() * (1e8 - (-1e8))) + (-1e8)), 0),
                     new Color((int) (Math.random() * 256), (int) (Math.random() * 256), (int) (Math.random() * 256)));
         }
 

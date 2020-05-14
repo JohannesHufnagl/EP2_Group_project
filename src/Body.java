@@ -41,6 +41,7 @@ public class Body {
     }
 
     public void draw() {
+        StdDraw.setPenRadius(0.0055);
         StdDraw.setPenColor(color);
         position.draw();
     }
