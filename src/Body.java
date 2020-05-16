@@ -56,6 +56,7 @@ public class Body {
     public Body unite(Body b) {
         double m = mass + b.mass;
         Vector3 p = (position.times(mass).plus(b.position.times(b.mass))).dividedBy(m);
-        return new Body(m, p, velocity.plus(b.velocity), color);
+        Vector3 v = (velocity.times(mass).plus(b.velocity.times(b.mass))).dividedBy(m);
+        return new Body(m, p, v, color);
     }
 }
