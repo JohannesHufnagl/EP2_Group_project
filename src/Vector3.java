@@ -6,9 +6,11 @@ public class Vector3 {
     private double y;
     private double z;
 
+    // Constructor, creates and initializes a new empty Vector3 object
     public Vector3() {
     }
 
+    // Constructor, creates and initializes a new Vector3 object, with x-, y- and z-coordinates
     public Vector3(double x, double y, double z) {
         this.x = x;
         this.y = y;

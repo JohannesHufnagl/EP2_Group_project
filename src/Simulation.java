@@ -7,6 +7,7 @@ public class Simulation {
 
     public static void main(String[] args) {
 
+        // Set up canvas for visualization
         StdDraw.setCanvasSize(500, 500);
         StdDraw.setXscale(-2 * AU, 2 * AU);
         StdDraw.setYscale(-2 * AU, 2 * AU);
@@ -30,7 +31,6 @@ public class Simulation {
                 new Vector3(0, 0, 0),
                 new Color(255,  0, 0));
          */
-
 
         // simulate the universe
         while (true) {
@@ -62,5 +62,4 @@ public class Simulation {
             StdDraw.pause(5);
         }
     }
-
 }
