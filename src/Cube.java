@@ -12,7 +12,7 @@ public class Cube {
         this.length = length;
     }
 
-    public double length() {
+    public double getLength() {
         return length;
     }
 
@@ -23,76 +23,12 @@ public class Cube {
                 z >= this.z - halfLength && z < this.z + halfLength);
     }
 
-    public Cube fNw() {
-        double x = this.x - this.length / 4.0;
-        double y = this.y + this.length / 4.0;
-        double z = this.z - this.length / 4.0;
+    public Cube buildCube(int i) {
+        double x = i % 2 == 0 ? this.x - this.length / 4.0 : this.x + this.length / 4.0;
+        double y = i > 1 && i < 4 || i > 5 ? this.y - this.length / 4.0 : this.y + this.length / 4.0;
+        double z = i < 4 ? this.z - this.length / 4.0 : this.z + this.length / 4.0;
         double length = this.length / 2.0;
-        Cube fNw = new Cube(x, y, z, length);
-        return fNw;
-    }
-
-    public Cube fNe() {
-        double x = this.x + this.length / 4.0;
-        double y = this.y + this.length / 4.0;
-        double z = this.z - this.length / 4.0;
-        double length = this.length / 2.0;
-        Cube fNe = new Cube(x, y, z, length);
-        return fNe;
-    }
-
-    public Cube fSw() {
-        double x = this.x - this.length / 4.0;
-        double y = this.y - this.length / 4.0;
-        double z = this.z - this.length / 4.0;
-        double length = this.length / 2.0;
-        Cube fSw = new Cube(x, y, z, length);
-        return fSw;
-    }
-
-    public Cube fSe() {
-        double x = this.x + this.length / 4.0;
-        double y = this.y - this.length / 4.0;
-        double z = this.z - this.length / 4.0;
-        double length = this.length / 2.0;
-        Cube fSe = new Cube(x, y, z, length);
-        return fSe;
-    }
-
-    public Cube bNw() {
-        double x = this.x - this.length / 4.0;
-        double y = this.y + this.length / 4.0;
-        double z = this.z + this.length / 4.0;
-        double length = this.length / 2.0;
-        Cube bNw = new Cube(x, y, z, length);
-        return bNw;
-    }
-
-    public Cube bNe() {
-        double x = this.x + this.length / 4.0;
-        double y = this.y + this.length / 4.0;
-        double z = this.z + this.length / 4.0;
-        double length = this.length / 2.0;
-        Cube bNe = new Cube(x, y, z, length);
-        return bNe;
-    }
-
-    public Cube bSw() {
-        double x = this.x - this.length / 4.0;
-        double y = this.y - this.length / 4.0;
-        double z = this.z + this.length / 4.0;
-        double length = this.length / 2.0;
-        Cube bSw = new Cube(x, y, z, length);
-        return bSw;
-    }
-
-    public Cube bSe() {
-        double x = this.x + this.length / 4.0;
-        double y = this.y - this.length / 4.0;
-        double z = this.z + this.length / 4.0;
-        double length = this.length / 2.0;
-        Cube bSe = new Cube(x, y, z, length);
-        return bSe;
+        return new Cube(x, y, z, length);
     }
 
     public void draw() {
