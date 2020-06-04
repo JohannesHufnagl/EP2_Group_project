@@ -22,7 +22,7 @@ public class BHTree {
             body = b;
             return;
         }
-        if (!isExternal()) {
+        if (!hasChildren()) {
             body = body.unite(b);
             putBody(b);
         } else {
@@ -48,7 +48,7 @@ public class BHTree {
 
     // Returns 'true' if every octant of the octtree is empty.
     // Returns 'false' if any octant of the octtree contains a body.
-    private boolean isExternal() {
+    private boolean hasChildren() {
         for (BHTree cube : cubes) {
             if (cube != null) {
                 return false;
@@ -63,7 +63,7 @@ public class BHTree {
         if (body == null || b.equals(body)) {
             return;
         }
-        if (isExternal()) {
+        if (hasChildren()) {
             b.addForce(body);
         } else {
             double length = cube.getLength();

@@ -13,24 +13,24 @@ public class Simulation {
         StdDraw.setYscale(-2 * AU, 2 * AU);
         StdDraw.enableDoubleBuffering();
 
-        int numberOfBodies = 1000;
+        int numberOfBodies = 1001;
 
         // generate random bodies
         Body[] bodies = new Body[numberOfBodies];
-        for (int i = 0; i < numberOfBodies; i++) {
+        for (int i = 0; i < numberOfBodies - 1; i++) {
             bodies[i] = new Body(((Math.random() * (2e30 - (1e22))) + (1e22)),
                     new Vector3(((Math.random() * (2 * AU - (-2) * AU)) + (-2) * AU), ((Math.random() * (2 * AU - (-2) * AU)) + (-2) * AU), 0),
                     new Vector3(((Math.random() * (1e8 - (-1e8))) + (-1e8)), ((Math.random() * (1e8 - (-1e8))) + (-1e8)), 0),
                     new Color((int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255)));
         }
 
-        /*
+
         // heavy body in the middle
         bodies[1000] = new Body(6e37,
                 new Vector3(0,0,0),
                 new Vector3(0, 0, 0),
                 new Color(255,  0, 0));
-         */
+
 
         // simulate the universe
         while (true) {
