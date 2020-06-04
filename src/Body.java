@@ -48,7 +48,7 @@ public class Body {
 
     // Draws a body object with their color on to the canvas
     public void draw() {
-        StdDraw.setPenRadius(0.0055);
+        StdDraw.setPenRadius(0.0005);
         StdDraw.setPenColor(color);
         position.draw();
     }
