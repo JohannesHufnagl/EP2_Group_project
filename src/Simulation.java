@@ -3,7 +3,7 @@ import java.awt.Color;
 public class Simulation {
 
     // one astronomical unit (AU) is the average distance of earth to the sun.
-    private static double AU = 150e9;
+    private static final double AU = 150e9;
 
     public static void main(String[] args) {
         long timeStart, timeEnd;
@@ -20,7 +20,7 @@ public class Simulation {
         Body[] bodies = new Body[numberOfBodies];
         for (int i = 0; i < numberOfBodies; i++) {
             bodies[i] = new Body(((Math.random() * (1e30 - (1e29))) + (1e29)),
-                    new Vector3(((Math.random() * (2 * AU - (-2) * AU)) + (-2) * AU), ((Math.random() * (2 * AU - (-2) * AU)) + (-2) * AU), 0),
+                    new Vector3(((Math.random() * (((2 * AU) - (i * 3e7)) - (((-2) * AU) + (i * 3e7)))) + (((-2) * AU) + (i * 3e7))), ((Math.random() * (((2 * AU) - (i * 3e7)) - (((-2) * AU) + (i * 3e7)))) + (((-2) * AU) + (i * 3e7))), 0),
                     new Vector3(((Math.random() * (1e8 - (-1e8))) + (-1e8)), ((Math.random() * (1e8 - (-1e8))) + (-1e8)), 0),
                     new Color((int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255)));
         }
