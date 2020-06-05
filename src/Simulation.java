@@ -19,20 +19,18 @@ public class Simulation {
         // generate random bodies
         Body[] bodies = new Body[numberOfBodies];
         for (int i = 0; i < numberOfBodies; i++) {
-            double position = ((2 * AU) - (i * 3e7)) - (((-2) * AU) + (i * 3e7));
-            bodies[i] = new Body(((Math.random() * (1e30 - (1e29))) + (1e29)),
-                    new Vector3(((Math.random() * position) + (((-2) * AU) + (i * 3e7))), ((Math.random() * position) + (((-2) * AU) + (i * 3e7))), 0),
-                    new Vector3(((Math.random() * (1e8 - (-1e8))) + (-1e8)), ((Math.random() * (1e8 - (-1e8))) + (-1e8)), 0),
-                    new Color((int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255)));
-        }
+            double minPosition = -2 * AU + i * 3e7;
+            double maxPosition = 2 * AU - i * 3e7;
+            double minMass = i < numberOfBodies / 3 ? 1e29 : i < 2 * numberOfBodies / 3 ? 5e29 : 1e30;
+            double maxMass = i < numberOfBodies / 3 ? 1e30 : i < 2 * numberOfBodies / 3 ? 5e30 : 1e31;
 
-        // heavy body in the middle
-        /*
-        bodies[numberOfBodies - 1] = new Body(6e37,
-                new Vector3(0, 0, 0),
-                new Vector3(0, 0, 0),
-                new Color(255, 0, 0));
-         */
+            bodies[i] = new Body(
+                    (Math.random() * (maxMass - minMass)) + minMass,
+                    new Vector3(((Math.random() * (maxPosition - minPosition)) + minPosition), ((Math.random() * (maxPosition - minPosition)) + minPosition), 0),
+                    new Vector3(((Math.random() * (1e8 - (-1e8))) + (-1e8)), ((Math.random() * (1e8 - (-1e8))) + (-1e8)), 0),
+                    new Color((int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255))
+            );
+        }
 
         // simulate the universe
         while (true) {
